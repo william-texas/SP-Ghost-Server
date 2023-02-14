@@ -22,6 +22,7 @@ async def leaderboardRequest():
 
 config.bind = ["localhost:8080"]
 loop = asyncio.get_event_loop()
-loop.create_task(datafetcher.updateCache(300))  # cache will update every 300 seconds or 5 minutes
+loop.create_task(datafetcher)  # cache will update every 300 seconds or 5 minutes
+#setLeaderboards function of cache should be called here to set the cache to the currently on disk leaderboards
 loop.create_task(serve(app, config))
 loop.run_forever()

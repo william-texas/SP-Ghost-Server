@@ -1,19 +1,18 @@
 syntax = "proto2";
 
-message LeaderboardRequest {
-  required uint32 track = 1;
-  required uint32 region = 2;
-}
-
-message LeaderboardResponse {
-  message Ghost {
+message Ghost {
     required uint32 rank = 1;
     required uint32 time = 2;
     required bytes mii = 3;
     required uint32 country = 4;
   }
 
-  message Leaderboard {
-    repeated Ghost ghost = 1;
-  }
+message LeaderboardRequest {
+  required uint32 track = 1;
+  required uint32 region = 2;
+}
+
+message LeaderboardResponse {
+  repeated Ghost ghost = 1;
+
 }
