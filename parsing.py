@@ -1,2 +1,2 @@
 async def parseLeaderboard(leaderboard):
-    return
+    return b""
