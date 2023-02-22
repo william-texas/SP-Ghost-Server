@@ -16,7 +16,7 @@ app = Quart('server')
 async def leaderboardRequest():
     requestBody = await request.data  # raw request data received by the server
     parameters = await parsing.parseLeaderboardRequest(requestBody)  # should return a list or a dict of parameters
-    leaderboard = await cache.getLeaderboard(parameters)  # this function grabs the latest cached version of the leaderboard which is already converted to XML format
+    leaderboard = await cache.getLeaderboard(parameters)  # this function grabs the latest cached version of the leaderboard which is already converted to the protobuf format
     return leaderboard
 
 
